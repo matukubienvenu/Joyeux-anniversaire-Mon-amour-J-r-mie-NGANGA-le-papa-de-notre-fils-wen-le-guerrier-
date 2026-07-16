@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Joyeux anniversaire Jérémie</title>
+<style>
+body{margin:0;font-family:Arial,sans-serif;background:linear-gradient(135deg,#ff4d6d,#7b2cbf);color:#fff;overflow:hidden}
+#hearts span{position:absolute;bottom:-40px;font-size:24px;animation:up 8s linear infinite}
+@keyframes up{from{transform:translateY(0)}to{transform:translateY(-120vh)}}
+.center{height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:20px}
+button{padding:15px 30px;border:none;border-radius:30px;font-size:18px;cursor:pointer}
+#card{display:none;max-width:700px;background:rgba(255,255,255,.15);padding:20px;border-radius:20px}
+</style>
+</head>
+<body>
+<div id="hearts"></div>
+<div class="center">
+<div id="start">
+<h1>🎁 Un cadeau t'attend…</h1>
+<p>Jérémie Nganga Mundelay</p>
+<button onclick="openGift()">Ouvrir mon cadeau ❤️</button>
+</div>
+<div id="card">
+<h1>🎉 Joyeux Anniversaire Jérémie ! 🎉</h1>
+<p>Aujourd'hui est un jour très spécial. Je prie que Dieu te bénisse, te protège et t'accorde une année remplie de bonheur, de réussite et d'amour.</p>
+<p><b>Je t'aime aujourd'hui, demain et pour toujours. ❤️</b></p>
+<h2>Avec tout mon amour,</h2>
+<p><b>Félicité, la mère d'Owen le guerrier.</b></p>
+</div>
+</div>
+<script>
+for(let i=0;i<30;i++){
+ let s=document.createElement('span');
+ s.textContent='❤️';
+ s.style.left=Math.random()*100+'vw';
+ s.style.animationDelay=(Math.random()*8)+'s';
+ s.style.fontSize=(18+Math.random()*20)+'px';
+ document.getElementById('hearts').appendChild(s);
+}
+function openGift(){
+ document.getElementById('start').style.display='none';
+ document.getElementById('card').style.display='block';
+}
+</script>
+</body></html>
